@@ -22,7 +22,7 @@ func NewCtx() context.Context {
 	}
 }
 
-func WrapCtx(ctx context.Context) context.Context {
+func WrapCtx(ctx context.Context) CtxContext {
 	xid := ctx.Value(XRequestId)
 	if xid == nil {
 		xid = uuid.NewV4().String()
