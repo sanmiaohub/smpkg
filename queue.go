@@ -9,6 +9,9 @@ type Kernel struct {
 }
 
 func (k *Kernel) Register(queueName string, consumer Worker) {
+	if k.list == nil {
+		k.list = make(map[string]Worker)
+	}
 	k.list[queueName] = consumer
 }
 
